@@ -1,0 +1,108 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2010 Xavier Danaux (xdanaux@gmail.com).
+%% Copyright 2010-2011 Mark Liu (markwayneliu@gmail.com).
+%% Copyright 2019 Fan Jin (fan.jin.1997@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+\usepackage{verbatim}
+
+% moderncv themes
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+
+% adjust the page margins
+\usepackage[scale=0.85]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+%\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+
+% personal data
+\firstname{Fan}
+\familyname{Jin}
+\address{3869 Miramar St, La Jolla, CA 92037}{Apt: Artesa-F-111-3}    % optional, remove the line if not wanted
+\mobile{+1-702-934-6263}                    % optional, remove the line if not wanted
+\email{fan.jin.1997@gmail.com}                      % optional, remove the line if not wanted
+\homepage{https://github.com/goldsail}                % optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography; only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+
+\section{Education}
+\cventry{2019--}{MS, Computer Science}{University of California San Diego}{La Jolla, CA}{}{}
+% \cvline{advisor:}{\small Professor Mutlu Ozdogan}
+\cventry{2015--2019}{BS, Automation}{Tsinghua University}{Beijing, China}{(GPA: 3.67/4.0, Top 15\%)}{minor in statistics}
+% \cvline{advisor:}{\small Professor Eric Bach}
+
+
+\section{Experience}
+
+\cventry{Summer 2019}{Full-stack Developer Intern}{ByteDance}{Beijing, China}{}{
+Built a user-firendly Content Management System (CMS) independently, both front-end in \url{React JS} and back-end in \url{Go}.
+With my work deployed in the finance and stocks team, 
+product managers can view statistics, 
+customer service team can adjust orders or refunds, 
+and developers can edit configurations on their browser visually.
+}
+
+\cventry{Spring 2019}{Undergraduate Degree Thesis}{Tsinghua University}{Beijing, China}{}{
+Built a intelligent transportation simulation software featuring semi-physical simulation in \url{C++}.
+Refactored decade-old codes into a new distributed architecture and upgraded it to \url{C++ 14}.
+}
+
+\cventry{Summer 2018}{Mechanical Systems Control Lab}{University of California, Berkeley}{Berkeley, CA}{}{
+Built an autonomous driving simulator using Unreal Engine 4 in \url{C++}.
+Designed the system in C/S architecture with PhD students and implemented it independently.
+Spotted and fixed a bug with the sample code in UE4, my pull request later merged on GitHub. 
+}
+
+\cventry{Fall 2017}{Compiler Course Project}{Tsinghua University}{Beijing, China}{}{
+Built a compiler for some LL(0) VM-based language using recursive descent.
+One-pass tokenizer, one-pass state-machine-based synctax analyzer, one-pass VM bytecode generator.
+}
+
+\cventry{Fall 2017}{Computational Photography Lab}{Tsinghua University}{Beijing, China}{}{
+Built an app in which researchers could see and control the microscope with VR glasses.
+Ported code from original microscope controller (desktop C++) to Android app.
+The app sends user input in TCP and receives microscope video streams in UDP.
+The users could move and zoom the microscope by rotating the phone so that they could focus on the field of view.
+}
+
+\cventry{Summer 2016}{C++/OOP Course Project}{Tsinghua University}{Beijing, China}{}{
+Built a train ticket booking system in OOP design.
+Designed database tables (routes, trains, itenaries, orders, etc.) independently.
+Back-end server in C\#, user client and administrator client in C\# WinForm.
+}
+
+\section{Technical Experience}
+\subsection{Extremely Proficient With}
+\cvline{languages}{C++, Go, JavaScript, MATLAB}
+\cvline{technologies}{React JS, Qt, Git, Unreal Engine 4}
+\subsection{Have Experience With}
+\cvline{languages}{Python, R, Java, VHDL}
+
+\section{Relevant Coursework}
+\subsection{Tsinghua University}
+\cvline{EECS}{C/C++, Data Stucture and Algorithms, VHDL, Computer Architecture, Systems and Signals, Digital Circuits, Analog Circuits}
+\cvline{statistics}{Introduction to Data Science, Statistical Inference, Financial Statistics, Bayesian Statistics}
+
+
+\end{document}
