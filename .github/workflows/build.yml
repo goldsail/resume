@@ -10,6 +10,7 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: fan_jin_resume.tex
+          extra_packages: moderncv
       - name: Deploy PDF to my github pages
         env: 
           PAGES_URL: ${{ secrets.PAGES_URL }}
