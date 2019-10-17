@@ -106,19 +106,10 @@
       \resumeItemListStart
         \resumeItem{Content Management System}{
           \begin{itemize}
-            \item Our team builds Dolphin Stocks, an app for stocks investors in China with DAU 800k+.
-            \item With the Content Management System I built,
-            product managers can view statistics,
-            customer service team can adjust order refunds (1k per day),
-            and developers can edit configurations visually spending 50\% less time.
-            \item Full-stack in ReactJS and Go, using Gin, Thrift, Redis, Kafka, consul. Deployed to container on Cloud.
-          \end{itemize}
-        }
-        \resumeItem{Stock Quotation Monitor}{
-          \begin{itemize}
-            \item Monitors stock price and quotation from multiple data sources and validates consistency.
-            \item With it, our 10-people team no longer needs to spend 1+ hours a day fixing wrong incoming data mannually.
-            \item Written in Python with PySpider and the Kafka message queue.
+            \item Our team builds an app for stocks investors in China with DAU 800k+. Back-end in \textbf{Go} with \textbf{Gin, Thrift}.
+            \item I built a web portal in \textbf{React JS} and \textbf{Ant Design}. Used \textbf{pagination fetch} to speed up big table rendering.
+            \item Shortened \textbf{Kafka} message replay time in case of failure by prioritizing key quotation data only.
+            \item Reduced DB load using \textbf{Redis}. Deployment from GitLab to internal cloud clusters as \textbf{Docker} image.
           \end{itemize}
         }
       \resumeItemListEnd
@@ -129,44 +120,39 @@
       \resumeItemListStart
         \resumeItem{Autonomous Driving Simulator in UE4}{
           \begin{itemize}
-            \item Built an autonomous driving simulator using Unreal Engine 4 in C++ (CLion + Visual Studio).
-            \item Designed the system with PhD students and implemented Render and Core server modules independently.
-            \item Fixed a bug in the sample code of UE4, my pull request later merged on GitHub.
+            \item Built an autonomous driving simulator using Unreal Engine 4 in C++ with \textbf{CMake}.
+            \item Implemented Render and Core server modules independently. Wrapper classes for libraries.
+            \item Communication in \textbf{JSON RPC}. Multi-threading with \textbf{mutex} locks.
           \end{itemize}
         }
       \resumeItemListEnd
 
     \resumeSubheading
-      {Course Projects}{}
-      {with intense coding}{}
+      {Projects}{}
+      {2015 -- 2019}{}
       \resumeItemListStart
-        \resumeItem{Distributed Network Systems Course Project (CSE 224, Fall 2019)}{
-          \begin{itemize}
-            \item A distributed, fault-tolerant cloud storage system implemented in C++ using XMLRPC.
-          \end{itemize}
-        }
-        \resumeItem{Undergrad Thesis Project (Spring 2019)}{
-          \begin{itemize}
-            \item Built An intelligent transportation simulation software featuring semi-physical simulation.
-            \item Refactored decade-old codes into a new distributed architecture with nearly 10k lines of C++.
-          \end{itemize}
-        }
-        \resumeItem{Compilor Course Project (Fall 2017)}{
-          \begin{itemize}
-            \item A compiler for some LL(0) VM-based language using recursive descent, implemented in Java.
-            \item One-pass tokenizer, one-pass state-machine-based syntax analyzer, one-pass VM bytecode generator.
-          \end{itemize}
-        }
         \resumeItem{Microscope Controller App with VR Glasses (Spring 2017)}{
           \begin{itemize}
             \item An Android app in which researchers could see and control the microscope with VR glasses.
-            \item Ported code from original microscope controller (desktop C++ in Qt) to Android app.
-            \item The users control the microscope by rotating the phone so that they could focus on the field of view.
+            \item Ported code from desktop C++ in \textbf{Qt} to \textbf{Android Studio} app.
           \end{itemize}
         }
         \resumeItem{GPU Server Maintainer (2016 -- 2019)}{
           Maintained a GPU linux server in Microsoft Student Club.
-          Helping others train their nueral network, I communicated with students and club leaders as well as gaining experience in Linux.
+          Helping others train their nueral network, I gained experience in \textbf{Linux Bash Shell}.
+        }
+        \resumeItem{Undergrad Thesis Project (Spring 2019)}{
+          \begin{itemize}
+            \item Built an intelligent transportation simulation software featuring semi-physical simulation.
+            \item Refactored decade-old codes into a new \textbf{distributed architecture} with nearly 10k lines of C++.
+          \end{itemize}
+        }
+        \resumeItem{Compilor Course Project (Fall 2017)}{
+          \begin{itemize}
+            \item A compiler for some LL(0) VM-based language using recursive descent, implemented in \textbf{Java}.
+            \item Deployed as HTTP server to Cloud Server that handles compiling requests.
+            \item One-pass tokenizer, one-pass state-machine-based syntax analyzer, one-pass VM bytecode generator.
+          \end{itemize}
         }
       \resumeItemListEnd
 
