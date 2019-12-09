@@ -18,14 +18,10 @@ jobs:
           root_file: fan_jin_resume.tex
           args: -xelatex -file-line-error -interaction=nonstopmode
           extra_packages: moderncv
-      - name: Compile LaTeX focument for cover letter
-        uses: xu-cheng/latex-action@master
-        with:
-          root_file: cover_letter.tex
-          args: -xelatex -file-line-error -interaction=nonstopmode
       - name: Deploy PDF to my github pages
-        env: 
+        env:
           PAGES_URL: ${{ secrets.PAGES_URL }}
+          KEY_US: ${{ secrets.KEY_US }}
         run: |
           git clone ${PAGES_URL}
           cd goldsail.github.io
@@ -33,7 +29,24 @@ jobs:
           git config --global user.name "Fan JIN"
           git config --global user.email "kingium@outlook.com"
           git add fan_jin_resume.pdf
-          git add cover_letter.pdf
           git commit -am "update resume"
           git push
           cd ..
+      - name: Deplot PDF to CN server
+        uses: horochx/deploy-via-scp@master
+        with:
+          local: fan_jin_resume.pdf
+          remote: ${{ secrets.REMOTE_CN }}
+          host: ${{ secrets.HOST_CN }}
+          port: ${{ secrets.PORT_CN }}
+          user: ${{ secrets.USER_CN }}
+          key: ${{ secrets.KEY_CN }}
+      - name: Deplot PDF to US server
+        uses: horochx/deploy-via-scp@master
+        with:
+          local: fan_jin_resume.pdf
+          remote: ${{ secrets.REMOTE_US }}
+          host: ${{ secrets.HOST_US }}
+          port: ${{ secrets.PORT_US }}
+          user: ${{ secrets.USER_US }}
+          key: ${{ secrets.KEY_US }}
