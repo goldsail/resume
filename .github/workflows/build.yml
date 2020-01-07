@@ -18,29 +18,6 @@ jobs:
           root_file: fan_jin_resume.tex
           args: -xelatex -file-line-error -interaction=nonstopmode
           extra_packages: moderncv
-      - name: Deploy PDF to my github pages
-        env:
-          PAGES_URL: ${{ secrets.PAGES_URL }}
-          KEY_US: ${{ secrets.KEY_US }}
-        run: |
-          git clone ${PAGES_URL}
-          cd goldsail.github.io
-          cp ../*.pdf ./
-          git config --global user.name "Fan JIN"
-          git config --global user.email "kingium@outlook.com"
-          git add fan_jin_resume.pdf
-          git commit -am "update resume"
-          git push
-          cd ..
-      - name: Deplot PDF to CN server
-        uses: horochx/deploy-via-scp@master
-        with:
-          local: fan_jin_resume.pdf
-          remote: ${{ secrets.REMOTE_CN }}
-          host: ${{ secrets.HOST_CN }}
-          port: ${{ secrets.PORT_CN }}
-          user: ${{ secrets.USER_CN }}
-          key: ${{ secrets.KEY_CN }}
       - name: Deplot PDF to US server
         uses: horochx/deploy-via-scp@master
         with:
