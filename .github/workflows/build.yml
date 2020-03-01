@@ -18,12 +18,18 @@ jobs:
           root_file: fan_jin_resume.tex
           args: -xelatex -file-line-error -interaction=nonstopmode
           extra_packages: moderncv
-      - name: Deplot PDF to US server
-        uses: horochx/deploy-via-scp@master
+      - name: Azure log in
+        uses: azure/login@v1
         with:
-          local: fan_jin_resume.pdf
-          remote: ${{ secrets.REMOTE_US }}
-          host: ${{ secrets.HOST_US }}
-          port: ${{ secrets.PORT_US }}
-          user: ${{ secrets.USER_US }}
-          key: ${{ secrets.KEY_US }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Upload PDF to Azure Blob
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob upload \
+              --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
+              --container-name ${{ secrets.AZURE_STORAGE_CONTAINER }} \
+              --name fan_jin_resume.pdf \
+              --file fan_jin_resume.pdf \
+              --auth-mode login
+            echo "Deploy Success"
