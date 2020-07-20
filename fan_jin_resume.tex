@@ -80,7 +80,7 @@
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
   \textbf{\Large Fan Jin} & Email: \href{mailto:fan.jin.1997@gmail.com}{fan.jin.1997@gmail.com}\\
-  \href{https://github.com/goldsail}{https://github.com/goldsail} & Mobile: +1-858-247-6514 \\
+  \href{https://github.com/goldsail}{https://github.com/goldsail} $\mid$ seeking full time SDE jobs & Mobile: +1-858-247-6514 \\
 \end{tabular*}
 
 
@@ -89,16 +89,30 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {University of California, San Diego}{La Jolla, CA}
-      {Master of Science in Computer Science}{Aug. 2019 -- }
+      {Master of Science in Computer Science; GPA 3.9;}{Aug. 2019 -- expected Dec. 2020}
     \resumeSubheading
       {Tsinghua University}{Beijing, China}
-      {Bachelor of Engineering in Automation;  GPA: 3.73 (Top 15\%); Minor in Statistics}{Aug. 2015 -- July. 2019}
+      {Bachelor of Engineering in Automation; GPA 3.73; Minor in Statistics}{Aug. 2015 -- July. 2019}
   \resumeSubHeadingListEnd
 
 
 %-----------EXPERIENCE-----------------
 \section{Experience}
   \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Amazon; Consumer Division}{Seattle, WA}
+      {SDE Intern in Orchestration Team}{Jun 2020 -- Sep 2020}
+      \resumeItemListStart
+        \resumeItem{Micro-services Data Summarization}{
+          \begin{itemize}
+            \item Our team owns a tool to orchestrate micro-services and visualize billions of process workflows per day.
+            \item I built a scheduler to fetch daily summaries from \textbf{ElasticSearch} and persist them in \textbf{DynamoDB}.
+            \item I built a web portal in \textbf{Angular JS} to present persisted data. Also generated weekly reports.
+            \item Deployed serverless as \textbf{AWS Lambda} and \textbf{Step Functions}.
+          \end{itemize}
+        }
+      \resumeItemListEnd
 
     \resumeSubheading
       {ByteDance; Finance and Stocks Team}{Beijing, China}
@@ -108,7 +122,6 @@
           \begin{itemize}
             \item Our team builds an app for stocks investors in China with DAU 800k+. Back-end in \textbf{Go} with \textbf{Gin, Thrift}.
             \item I built a web portal in \textbf{React JS} and \textbf{Ant Design}. Used \textbf{pagination fetch} to speed up big table rendering.
-            \item Shortened \textbf{Kafka} message replay time in case of failure by prioritizing key quotation data only.
             \item Reduced DB load using \textbf{Redis}. Deployment from GitLab to internal cloud clusters as \textbf{Docker} image.
           \end{itemize}
         }
@@ -139,7 +152,6 @@
         }
         \resumeItem{GPU Server Maintainer (2016 -- 2019)}{
           Maintained a GPU linux server in Microsoft Student Club.
-          Helping others train their nueral network, I gained experience in \textbf{Linux Bash Shell}.
         }
         \resumeItem{Undergrad Thesis Project (Spring 2019)}{
           \begin{itemize}
@@ -150,7 +162,6 @@
         \resumeItem{Compilor Course Project (Fall 2017)}{
           \begin{itemize}
             \item A compiler for some LL(0) VM-based language using recursive descent, implemented in \textbf{Java}.
-            \item Deployed as HTTP server to Cloud Server that handles compiling requests.
             \item One-pass tokenizer, one-pass state-machine-based syntax analyzer, one-pass VM bytecode generator.
           \end{itemize}
         }
@@ -164,10 +175,10 @@
 \section{Programming Skills}
   \resumeSubHeadingListStart
     \item{
-      \textbf{Languages and Tools}{: C/C++, Go, JavaScript, Java, R, Python, C\#, MATLAB, Bash, Git, CI/CD}
+      \textbf{Languages and Tools}{: C/C++, Go, JavaScript, Java, R, Python, C\#, MATLAB, Bash, Git, AWS}
       }
     \item{
-      \textbf{Frameworks}{: ReactJS, Ant Design, Thrift (RPC), Gin (web server), MySQL, Redis, Kafka MQ, Qt}
+      \textbf{Frameworks}{: ReactJS, Ant Design, Thrift (RPC), Gin, Guice, DynamoDB, MySQL, Redis, Kafka, Qt}
     }
   \resumeSubHeadingListEnd
 
@@ -177,8 +188,8 @@
 \resumeSubHeadingListStart
   \resumeSubItem{EECS}{
     C/C++, Data Stucture and Algorithms,
-    Computer Architecture, Systems and Signals,
-    Digital Circuits
+    Computer Architecture,
+    Computer Security
   }
   \resumeSubItem{Statistics}{
     Introduction to Data Science, Statistical Inference,
