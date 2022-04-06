@@ -27,6 +27,7 @@ jobs:
         with:
           inlineScript: |
             az storage blob upload \
+              --overwrite \
               --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
               --container-name ${{ secrets.AZURE_STORAGE_CONTAINER }} \
               --name fan_jin_resume.pdf \
