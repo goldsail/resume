@@ -80,7 +80,7 @@
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
   \textbf{\Large Fan Jin} & Email: \href{mailto:fan.jin.1997@gmail.com}{fan.jin.1997@gmail.com}\\
-  \href{https://github.com/goldsail}{GitHub} $\mid$ New grad 2021 seeking Software Engineer jobs & Mobile: +1-858-247-6514 \\
+  \href{https://github.com/goldsail}{GitHub} $\mid$ SDE 1 at Amazon & Mobile: +1-858-247-6514 \\
 \end{tabular*}
 
 
@@ -89,7 +89,7 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {University of California, San Diego}{La Jolla, CA}
-      {Master of Science in Computer Science; GPA 3.9;}{Aug. 2019 -- expected Dec. 2020}
+      {Master of Science in Computer Science; GPA 3.9;}{Aug. 2019 -- Dec. 2020}
     \resumeSubheading
       {Tsinghua University}{Beijing, China}
       {Bachelor of Engineering in Automation; GPA 3.73; Minor in Statistics}{Aug. 2015 -- July. 2019}
@@ -101,14 +101,27 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Amazon; Consumer Division}{Seattle, WA}
-      {SDE Intern in Orchestration Team}{Jun 2020 -- Sep 2020}
+      {Amazon; Orchestration Team}{Seattle, WA}
+      {Software Development Engineer I}{Feb 2021 -- current}
+      \resumeItemListStart
+        \resumeItem{Full-stack development of a new Web App}{
+          \begin{itemize}
+            \item I worked with team to build an internal web app in \textbf{React}, similar to AWS Console.
+            \item I owned one user experience from end to end, including design, integration and tests.
+            \item Experienced authentication \& authorization, CSRF protection, Infrastructure as Code and operations.
+          \end{itemize}
+        }
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Amazon; Orchestration Team}{Seattle, WA}
+      {SDE Intern}{Jun 2020 -- Sep 2020}
       \resumeItemListStart
         \resumeItem{Micro-services Data Summarization}{
           \begin{itemize}
             \item Our team owns a tool to orchestrate micro-services and visualize billions of process workflows per day.
             \item I built a scheduler to fetch daily summaries from \textbf{ElasticSearch} and persist them in \textbf{DynamoDB}.
-            \item I built a web portal in \textbf{Angular JS} to present persisted data.
+            \item I built a web portal in \textbf{Angular} to present persisted data.
             \item Deployed serverless as \textbf{AWS Lambda} and \textbf{Step Functions}.
           \end{itemize}
         }
@@ -140,33 +153,6 @@
         }
       \resumeItemListEnd
 
-    \resumeSubheading
-      {Projects}{}
-      {2015 -- 2019}{}
-      \resumeItemListStart
-        \resumeItem{Microscope Controller App with VR Glasses (Spring 2017)}{
-          \begin{itemize}
-            \item An Android app in which researchers could see and control the microscope with VR glasses.
-            \item Ported code from desktop C++ in \textbf{Qt} to \textbf{Android Studio} app.
-          \end{itemize}
-        }
-        \resumeItem{GPU Server Maintainer (2016 -- 2019)}{
-          Maintained a GPU linux server in Microsoft Student Club.
-        }
-        \resumeItem{Undergrad Thesis Project (Spring 2019)}{
-          \begin{itemize}
-            \item Built an intelligent transportation simulation software featuring semi-physical simulation.
-            \item Refactored decade-old codes into a new \textbf{distributed architecture} with nearly 10k lines of C++.
-          \end{itemize}
-        }
-        \resumeItem{Compilor Course Project (Fall 2017)}{
-          \begin{itemize}
-            \item A compiler for some LL(0) VM-based language using recursive descent, implemented in \textbf{Java}.
-            \item One-pass tokenizer, one-pass state-machine-based syntax analyzer, one-pass VM bytecode generator.
-          \end{itemize}
-        }
-      \resumeItemListEnd
-
 
   \resumeSubHeadingListEnd
 
@@ -175,10 +161,10 @@
 \section{Programming Skills}
   \resumeSubHeadingListStart
     \item{
-      \textbf{Languages and Tools}{: C/C++, Go, JavaScript, Java, R, Python, C\#, MATLAB, Bash, Git, AWS}
+      \textbf{Languages and Tools}{: JavaScript, TypeScript, Java, C/C++, Go, R, Python, C\#, MATLAB, Bash, Git, AWS}
       }
     \item{
-      \textbf{Frameworks}{: ReactJS, Ant Design, Thrift (RPC), Gin, Guice, DynamoDB, MySQL, Redis, Kafka, Qt}
+      \textbf{Frameworks}{: React, Guice, Tomcat, Elasticsearch, Kinesis, DynamoDB, Thrift (RPC), Gin, Redis, Kafka, Qt}
     }
   \resumeSubHeadingListEnd
 
@@ -186,9 +172,10 @@
 %-----------PROJECTS-----------------
 \section{Relevant Courses}
 \resumeSubHeadingListStart
-  \resumeSubItem{EECS}{
+  \resumeSubItem{Computer Science}{
     C/C++, Data Stucture and Algorithms,
     Computer Architecture,
+    Computer Network,
     Computer Security
   }
   \resumeSubItem{Statistics}{
