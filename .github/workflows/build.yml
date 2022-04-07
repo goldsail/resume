@@ -30,7 +30,7 @@ jobs:
               --overwrite \
               --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
               --container-name ${{ secrets.AZURE_STORAGE_CONTAINER }} \
-              --name fan_jin_resume.pdf \
+              --name fan_jin_resume_with_job_duties.pdf \
               --file fan_jin_resume.pdf \
               --auth-mode login
             echo "Deploy Success"
