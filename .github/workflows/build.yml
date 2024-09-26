@@ -2,10 +2,10 @@ name: Build LaTeX document
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
   workflow_dispatch:
 jobs:
   build_latex:
@@ -17,7 +17,13 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: fan_jin_resume.tex
-          args: -xelatex -file-line-error -interaction=nonstopmode
+          args: -xelatex -file-line-error -interaction=nonstopmode -jobname=fan_jin_resume
+          extra_packages: moderncv
+      - name: Compile LaTeX document for resume (easy version)
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: fan_jin_resume.tex
+          args: -xelatex -file-line-error -interaction=nonstopmode -jobname=fan_jin_resume_easy_version
           extra_packages: moderncv
       - name: Azure log in
         uses: azure/login@v1
@@ -35,3 +41,16 @@ jobs:
               --file fan_jin_resume.pdf \
               --auth-mode login
             echo "Deploy Success"
+      - name: Upload PDF (easy version) to Azure Blob
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob upload \
+              --overwrite \
+              --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
+              --container-name ${{ secrets.AZURE_STORAGE_CONTAINER }} \
+              --name fan_jin_resume_easy_version.pdf \
+              --file fan_jin_resume_easy_version.pdf \
+              --auth-mode login
+            echo "Deploy Success"
+            

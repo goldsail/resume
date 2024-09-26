@@ -21,6 +21,8 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
+\usepackage{ifthen}
+\usepackage{etoolbox}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -74,6 +76,10 @@
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Default version explains job duties professionally. 
+\newcommand{\ifDefaultVersion}[1]{ \expandafter\ifstrequal\expandafter{\jobname}{fan_jin_resume}{#1}{} }
+% Easy version summaries my job duties on a high level, easy to understand.
+\newcommand{\ifEasyVersion}[1]{ \expandafter\ifstrequal\expandafter{\jobname}{fan_jin_resume_easy_version}{#1}{} }
 
 \begin{document}
 
@@ -102,7 +108,8 @@
 
     \resumeSubheading
       {Amazon; Workflow Orchestration and Observability Team}{Seattle, WA}
-      {Software Development Engineer II}{Oct 2023 -- current}
+      {Software Development Engineer II}{Oct 2023 -- current}{
+      \ifDefaultVersion{
       \resumeItemListStart
         \resumeItem{Workflow and non-workflow observability systems}{
           \begin{itemize}
@@ -112,10 +119,25 @@
           \end{itemize}
         }
       \resumeItemListEnd
+      }
+      \ifEasyVersion{
+        \resumeItemListStart
+        \resumeItem{Workflow and non-workflow observability systems}{
+          \begin{itemize}
+            \item I work with team on software systems that power the ordering, payment, fulfillment, digital content purchase workflows across Amazon retail business.
+            \item I design and develop software, including distributed server-side systems and web applications.
+            \item I employed what I learned in Master's Program to ensure the software I deliver is secure and efficient.
+            \item I took part in operations with problem solving skills to keep our service running in high availability.
+          \end{itemize}
+        }
+      \resumeItemListEnd
+      }
+      }
 
     \resumeSubheading
       {Amazon; Workflow Orchestration and Observability Team}{Seattle, WA}
-      {Software Development Engineer I}{Feb 2021 -- Sep 2023}
+      {Software Development Engineer I}{Feb 2021 -- Sep 2023}{
+      \ifDefaultVersion{
       \resumeItemListStart
         \resumeItem{Full-stack development of a new Web App for workflow visualization}{
           \begin{itemize}
@@ -125,10 +147,25 @@
           \end{itemize}
         }
       \resumeItemListEnd
+      }
+      \ifEasyVersion{
+      \resumeItemListStart
+        \resumeItem{Full-stack development of a new Web App for workflow visualization}{
+          \begin{itemize}
+            \item I worked with team to develop software, including server-side code and web applications.
+            \item I employed what I learned in Master's Program to ensure the software I deliver is secure and efficient.
+            \item I developed several software modules using my skills in the design, coding, integration and tests.
+            \item I took part in operations with problem solving skills to keep our service running in high availability.
+          \end{itemize}
+        }
+      \resumeItemListEnd
+      }
+      }
 
     \resumeSubheading
       {Amazon; Orchestration Team}{Seattle, WA}
-      {SDE Intern}{Jun 2020 -- Sep 2020}
+      {SDE Intern}{Jun 2020 -- Sep 2020}{
+      \ifDefaultVersion{
       \resumeItemListStart
         \resumeItem{Micro-services Data Summarization}{
           \begin{itemize}
@@ -138,6 +175,19 @@
           \end{itemize}
         }
       \resumeItemListEnd
+      }
+      \ifEasyVersion{
+      \resumeItemListStart
+        \resumeItem{Micro-services Data Summarization}{
+          \begin{itemize}
+            \item My duty as intern was to develop a software feature which is related to our team's software product.
+            \item I built a scheduler to fetch daily summaries from existing system, analyze them, and then present the result in a web page.
+            \item I applied what I learned in school courses to my intern project and made it more scalable and cost efficient.
+          \end{itemize}
+        }
+      \resumeItemListEnd
+      }
+      }
 
     \resumeSubheading
       {ByteDance; Finance and Stocks Team}{Beijing, China}
@@ -167,7 +217,7 @@
 
   \resumeSubHeadingListEnd
 
-
+\ifDefaultVersion{
 %--------PROGRAMMING SKILLS------------
 \section{Programming Skills}
   \resumeSubHeadingListStart
@@ -178,22 +228,24 @@
       \textbf{Frameworks}{: React, Guice, Elasticsearch, Kinesis, DynamoDB, AWS Athena, Tomcat, JAX-RS}
     }
   \resumeSubHeadingListEnd
+}
 
-
+\ifEasyVersion{
 %-----------PROJECTS-----------------
-% \section{Relevant Courses}
-% \resumeSubHeadingListStart
-%   \resumeSubItem{Computer Science}{
-%     C/C++, Data Stucture and Algorithms,
-%     Computer Architecture,
-%     Computer Network,
-%     Computer Security
-%   }
-%   \resumeSubItem{Statistics}{
-%     Introduction to Data Science, Statistical Inference,
-%     Financial Statistics, Bayesian Statistics
-%   }
-% \resumeSubHeadingListEnd
+\section{Relevant Courses}
+\resumeSubHeadingListStart
+  \resumeSubItem{Computer Science}{
+    C/C++, Data Stucture and Algorithms,
+    Computer Architecture,
+    Computer Network,
+    Computer Security
+  }
+  \resumeSubItem{Statistics}{
+    Introduction to Data Science, Statistical Inference,
+    Financial Statistics, Bayesian Statistics
+  }
+\resumeSubHeadingListEnd
+}
 
 
 %-------------------------------------------
