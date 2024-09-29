@@ -53,14 +53,20 @@ jobs:
               --file fan_jin_resume_easy_version.pdf \
               --auth-mode login
             echo "Deploy Success"
+      - name: Create release tag name from timestamp
+        id: create_releasetag_name
+        run: |
+          echo ${{ github.event.repository.updated_at }} | \
+          sed 's/:/./g' | \ # Release tag names cannot contain colons, so replacing with a dot.
+          read date && echo "builddate=$date" >> $GITHUB_OUTPUT
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.event.repository.updated_at }}
-          release_name: Release ${{ github.event.repository.updated_at }}
+          tag_name: ${{ steps.create_releasetag_name.outputs.builddate }}
+          release_name: Release ${{ steps.create_releasetag_name.outputs.builddate }}
           draft: false
           prerelease: false
       - name: Upload GitHub Release Asset
