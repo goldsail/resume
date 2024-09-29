@@ -55,14 +55,11 @@ jobs:
             echo "Deploy Success"
       - name: Create release tag name from timestamp
         id: create_release_tag_name
-        run: | # Release tag names cannot contain colons, so replacing with a dot.
-          echo ${{ github.event.head_commit.timestamp }}
-          git log -1 --format=%cd --date=unix
-          date -ud "@$(git log -1 --format=%cd --date=unix)" +"%Y%m%dT%H%M%SZ"
-          echo "RELEASE_TAG_NAME=$( date -ud "@$(git log -1 --format=%cd --date=unix)" +"%Y%m%dT%H%M%SZ" )"
-          echo "RELEASE_TAG_NAME=$( date -ud "@$(git log -1 --format=%cd --date=unix)" +"%Y%m%dT%H%M%SZ" )" >> $GITHUB_OUTPUT
-      - name: Debug the release tag name
-        run: echo ${{ steps.create_release_tag_name.outputs.RELEASE_TAG_NAME }}
+        run: |
+          LAST_COMMIT_TIMESTAMP=$( git log -1 --format=%cd --date=unix )
+          RELEASE_TAG_NAME=$( date -ud "@$LAST_COMMIT_TIMESTAMP" +"%Y%m%dT%H%M%SZ" )
+          echo "Created release tag name: $RELEASE_TAG_NAME"
+          echo "RELEASE_TAG_NAME=$RELEASE_TAG_NAME" >> $GITHUB_OUTPUT
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
