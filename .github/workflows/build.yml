@@ -55,9 +55,9 @@ jobs:
             echo "Deploy Success"
       - name: Create release tag name from timestamp
         id: create_releasetag_name
-        run: |
+        run: | # Release tag names cannot contain colons, so replacing with a dot.
           echo ${{ github.event.repository.updated_at }} | \
-          sed 's/:/./g' | \ # Release tag names cannot contain colons, so replacing with a dot.
+          sed 's/:/./g' | \
           read date && echo "builddate=$date" >> $GITHUB_OUTPUT
       - name: Create GitHub Release
         id: create_release
